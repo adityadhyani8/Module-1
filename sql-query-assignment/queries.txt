@@ -1,0 +1,35 @@
+-- 1. Retrieve all columns
+SELECT * FROM students;
+
+-- 2. Retrieve only name and score
+SELECT name, score FROM students;
+
+-- 3. Students who scored above 80
+SELECT * FROM students WHERE score > 80;
+
+-- 4. Students who scored above 80 AND passed
+SELECT * FROM students WHERE score > 80 AND passed = 1;
+
+-- 5. Students who scored above 85 OR belong to class 9
+SELECT * FROM students WHERE score > 85 OR class = 9;
+
+-- 6. Students who did NOT pass
+SELECT * FROM students WHERE NOT passed = 1;
+
+-- 7. Distinct classes
+SELECT DISTINCT class FROM students;
+
+-- 8. Top 5 highest-scoring students
+SELECT TOP 5 * FROM students ORDER BY score DESC;
+
+-- 9. Students sorted by class ASC, score DESC
+SELECT * FROM students ORDER BY class ASC, score DESC;
+
+-- 10. Alias score as final_score
+SELECT name, score AS final_score FROM students;
+
+-- 11. Combined query: name + score, filter >75, sort DESC, top 3
+SELECT TOP 3 name, score
+FROM students
+WHERE score > 75
+ORDER BY score DESC;
